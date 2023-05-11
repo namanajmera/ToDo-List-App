@@ -3,7 +3,7 @@ import "./App.css";
 import AddToDo from "./components/AddToDo";
 import TodoList from "./components/TodoList";
 import { useDispatch, useSelector } from "react-redux";
-import { add } from "./store/slice/ToDoSlice";
+import { add, remove } from "./store/slice/ToDoSlice";
 import { v4 as uuidv4 } from 'uuid';
 
 function App() {
@@ -20,11 +20,15 @@ function App() {
     dispatch(add(toDoObject))
     setText("");
   };
+
+  const onHandleDelete = (id) => {
+    dispatch(remove(id))
+  }
   return (
     <div className="App">
       <h1>ToDo List</h1>
       <AddToDo text={text} setText={setText} handleSumbit={handleSumbit} />
-      <TodoList listToDo={listToDo} />
+      <TodoList listToDo={listToDo} onHandleDelete={onHandleDelete}/>
     </div>
   );
 }
