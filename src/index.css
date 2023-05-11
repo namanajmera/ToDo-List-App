@@ -1,59 +1,117 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+.App {
+  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.App {
   text-align: center;
+  margin-top: 60px;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-input[type="text"] {
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 1rem;
+.AddToDo {
+  width: 200px;
+  margin: 0 auto;
+}
+
+input {
   width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
 }
 
+.TodoList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
 li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
 }
 
-li > button {
-  background-color: transparent;
-  border: none;
-  outline: none;
+li:hover {
+  background-color: #eee;
+}
+
+li span {
   cursor: pointer;
-  padding: 0;
-  margin-left: 1rem;
 }
 
+li span:before {
+  content: "";
+  float: left;
+  margin-right: 10px;
+  border-left: 1px solid #ccc;
+  padding-left: 10px;
+}
 
-li > button:hover {
+li span:after {
+  content: "";
+  float: right;
+  margin-left: 10px;
+  border-right: 1px solid #ccc;
+  padding-right: 10px;
+}
+
+.DeleteButton {
+  float: right;
+}
+
+.to-do-list-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.to-do-list-container:hover {
+  background-color: #eee;
+}
+
+.to-do-list-container li {
+  margin-bottom: 5px;
+}
+
+.to-do-list-container li:before {
+  content: "";
+  float: left;
+  margin-right: 10px;
+  border-left: 1px solid #ccc;
+  padding-left: 10px;
+}
+
+.to-do-list-container li:after {
+  content: "";
+  float: right;
+  margin-left: 10px;
+  border-right: 1px solid #ccc;
+  padding-right: 10px;
+}
+
+.to-do-list-container li span {
+  cursor: pointer;
+}
+
+.to-do-list-container li span:hover {
+  text-decoration: underline;
+}
+
+.to-do-list-container li .check {
+  float: right;
+  margin-right: 10px;
+}
+
+.to-do-list-container li .check:before {
+  content: "\2713";
+}
+
+.to-do-list-container li .check:hover {
   color: red;
 }
 
-.to-do-list-container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 70%; 
+li {
+  list-style-type: none;
 }
