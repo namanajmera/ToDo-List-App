@@ -2,23 +2,13 @@ import { useState } from "react";
 import "./App.css";
 import AddToDo from "./components/AddToDo";
 import TodoList from "./components/TodoList";
+import { useDispatch, useSelector } from "react-redux";
+import { add } from "./store/slice/ToDoSlice";
 
 function App() {
   const [text, setText] = useState("");
-  const [listToDo, setListToDo] = useState([
-    {
-      id: 1,
-      text: "Learn React",
-    },
-    {
-      id: 2,
-      text: "Learn React Redux",
-    },
-    {
-      id: 3,
-      text: "Learn Redux Toolkit",
-    },
-  ]);
+  const listToDo = useSelector((state) => state.toDo.toDoList)
+  const dispatch = useDispatch();
 
   const handleSumbit = (e) => {
     e.preventDefault();
@@ -27,7 +17,7 @@ function App() {
       id: length + 1,
       text: text,
     };
-    setListToDo([...listToDo, toDoObject]);
+    dispatch(add(toDoObject))
     setText("");
   };
   return (
