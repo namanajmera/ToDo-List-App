@@ -11,3 +11,49 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+li > button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 1rem;
+}
+
+
+li > button:hover {
+  color: red;
+}
+
+.to-do-list-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%; 
+}

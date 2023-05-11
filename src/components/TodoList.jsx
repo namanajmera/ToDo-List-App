@@ -14,7 +14,7 @@ export default function TodoList({onHandleDelete}) {
         <ul>
         {
             listToDo && listToDo.map((item) => (
-                <div key={item.id}>
+                <div key={item.id} className='to-do-list-container'>
                     <li onClick={() => handleDone(item)} style={{
                         textDecoration: item.done ? 'line-through' : 'none',
                         cursor: 'pointer'
