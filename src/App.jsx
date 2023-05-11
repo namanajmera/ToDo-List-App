@@ -4,6 +4,7 @@ import AddToDo from "./components/AddToDo";
 import TodoList from "./components/TodoList";
 import { useDispatch, useSelector } from "react-redux";
 import { add } from "./store/slice/ToDoSlice";
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [text, setText] = useState("");
@@ -12,9 +13,8 @@ function App() {
 
   const handleSumbit = (e) => {
     e.preventDefault();
-    let length = listToDo.length;
     let toDoObject = {
-      id: length + 1,
+      id: uuidv4(),
       text: text,
     };
     dispatch(add(toDoObject))

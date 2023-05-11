@@ -3,20 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const toDoSlice = createSlice({
   name: "toDo",
   initialState: {
-    toDoList: [
-      {
-        id: 1,
-        text: "Learn React",
-      },
-      {
-        id: 2,
-        text: "Learn React Redux",
-      },
-      {
-        id: 3,
-        text: "Learn Redux Toolkit",
-      },
-    ],
+    toDoList: [],
   },
   reducers: {
     add: (state, action) => {
