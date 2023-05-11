@@ -16,6 +16,7 @@ function App() {
     let toDoObject = {
       id: uuidv4(),
       text: text,
+      done: false 
     };
     dispatch(add(toDoObject))
     setText("");
